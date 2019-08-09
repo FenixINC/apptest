@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="model"
+            type="com.taras.apptest.data.models.Comment" />
+
+        <variable
+            name="listener"
+            type="com.taras.apptest.presentation.listeners.EmailClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_border"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{model.name}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="@{TextUtils.isEmpty(model.name) ? View.GONE : View.VISIBLE}"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:layout_marginBottom="@dimen/dp4"
+                android:maxLines="1"
+                android:text="@{model.email}"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:visibility="@{TextUtils.isEmpty(model.email) ? View.GONE : View.VISIBLE}"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{model.body}"
+                android:textColor="@color/grey_dark"
+                android:textSize="16sp"
+                android:visibility="@{TextUtils.isEmpty(model.body) ? View.GONE : View.VISIBLE}"
+                tools:text="@tools:sample/lorem" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

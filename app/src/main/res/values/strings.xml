@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">apptest</string>
+    <string name="app_name">App</string>
+
+    <string name="lower_bound">Lower bound</string>
+    <string name="upper_bound">Upper bound</string>
+
+    <string name="label_empty_data_message">There are no data.\nSwipe to refresh.</string>
+
+    <string name="show_result">Show Result</string>
 </resources>
